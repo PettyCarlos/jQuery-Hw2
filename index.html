@@ -71,6 +71,7 @@ vertical-align:middle;
             margin:0 auto;
             border:1px; 
             }
+      
 
 
 </style>
@@ -107,6 +108,9 @@ vertical-align:middle;
 
     <script>
    $(document).ready(function(){
+        $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
        
       $("#usdollar").focus(function() {
 		$("input:text").css('background-color','red');
@@ -198,4 +202,5 @@ vertical-align:middle;
 </div>
 </div>
 </body>
+   
 </html>
