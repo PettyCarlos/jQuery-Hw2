@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang = en>
+<head>
+
+   
+      <meta name="description" content= "CNIT 133 Homework 2 - Basic Operations ">
+      <meta charset = "UTF-8" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    <style>
+        .profile {
+color: black; 
+font-family: Times New Roman; 
+
+border-collapse:
+collapse; border-spacing: 0;
+font-size:12px;
+}
+        td,th { border: 1px;  ; height: 30px; } 
+
+th {
+background: #F3F3F3 ; 
+font-weight: bold; 
+padding:0 5px 0 10px;
+vertical-align:middle;
+text-align:center;
+}
+
+td {
+background:  #FAFAFA; 
+padding-left:10px;
+vertical-align:middle;
+    text-align: right
+}
+        
+
+        body {
+          background-color:cadetblue
+      }
+         #holygrail-container{display:grid; grid-template-columns: 190px 1fr 190px; background: cadetblue; height: 100%; min-width: 400px; min-height: 270px;
+         }
+        
+         header, footer {grid-column: span 4;
+                        }
+         
+         nav {display: inline; padding-bottom: 25px; display: flex; align-items: center;
+             }
+           
+            nav ul{list-style-type:none; padding:0; 
+                  }
+            
+            nav ul li{ display: inline-block;
+                       margin:0 5px;
+                       border:2px solid black;
+                      border-radius: 10px;
+                       margin-right: 350px;
+                       background-color: cadetblue;
+                       text-align:center;
+                       width: 150px;
+                       height: 30px; 
+                       line-height:30px;
+                        margin-bottom: 5px;}
+            
+            nav ul li a {text-decoration: none; font-weight: bold; color:white;
+                        }
+         
+        ul li { list-style-type: none;}
+       
+        table{width:400px; 
+            margin:0 auto;
+            border:1px; 
+            }
+
+
+</style>
+    
+    <title>CNIT 133 HOMEWORK 2 - BASIC OPERATIONS</title>
+     
+</head>
+    
+    <body> 
+        <header>
+  <h1 style="text-align:center">CNIT 133 HOMEWORK 2 - BASIC OPERATIONS</h1>
+            </header>
+         
+             <nav>
+    <ul>
+            <li><a href="https://pettycarlos.github.io/CNIT-133-Homework-1/">Homepage</a></li>
+            <li><a href="https://pettycarlos.github.io/homework1/">Homework 2</a></li>
+            <li><a href="https://pettycarlos.github.io/Assignment/">Homework 3</a></li>
+            <li><a href="https://pettycarlos.github.io/MeetupReport/">Homework 4</a></li>
+            <li><a href="https://pettycarlos.github.io/Contact-Me-Form/">Homework 5</a></li>
+            <li><a href="https://pettycarlos.github.io/Contact-Me-Form/">Homework 6</a></li>
+            <li><a href="https://pettycarlos.github.io/Contact-Me-Form/">Homework 7</a></li>
+            <li><a href="https://pettycarlos.github.io/Contact-Me-Form/">Homework 8</a></li>
+            
+        </ul>
+            </nav>
+            
+        
+         <ol>
+  <li><a href="DocumentWritingStatement.html">Part 1 - Writing Script Using Document Writing Statements</a></li>
+  <li><a href="integers.html">Part 2 - Input 3 integers</a></li>
+  <li><a href="jquery.html">Part 3 - jQuery</a></li>
+</ol>
+
+    <script>
+   $(document).ready(function(){
+       
+      $("#usdollar").focus(function() {
+		$("input:text").css('background-color','red');
+	});     
+      
+      
+      $("#usdollar").keyup(function(){
+       us = $("input:text").val();
+       
+       euro = 0.84*us;
+       var c = euro.toFixed(2);
+       $('#euro').html(c);
+      
+       candian = 1.23*us;
+       var b = candian.toFixed(2);
+       $('#candian').html(b);
+          
+       hongkong = us*7.76;
+       var a = hongkong.toFixed(2);
+       $('#hongkong').html(a);
+      
+       yen = 110.80*us;
+       var d = yen.toFixed(2);
+       $('#yen').html(d);
+      
+       peso = 19.82*us;
+       var e = peso.toFixed(2);
+       $('#peso').html(e);
+      });
+  
+      $("#viewInst").click(function(){
+           $("#mainData").show(1000);
+      });
+  
+   });
+</script>
+
+
+
+<div style="width:400px;margin:0 auto;">
+
+   <b><a href="#" id="viewInst">Click to Show / Hide Instructions</a></b>
+</div>
+<div id="mainData" style="display:none">
+    <div>
+    <table>
+         <tr>
+           <th colspan="3">Monetary Exchange Rates</th>
+        </tr>
+        <tr>
+           <th>Currency</th>
+            <th>Rate</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <th>Euro</th>
+            <td>0.84</td>
+            <td id="euro"></td>
+           
+        </tr>
+        <tr>
+           <th>Candian Dollar</th>
+            <td>1.28</td>
+            <td id="candian"></td>
+        </tr>
+        <tr>
+           <th>Hong Kong Dollar</th>
+            <td>7.70</td>
+            <td id="hongkong"></td>
+        </tr>
+        <tr>
+           <th>Japanese Yen</th>
+            <td>110.80</td>
+            <td id="yen"></td>
+        </tr>
+        <tr>
+           <th>Mexican Peso</th>
+            <td>19.82</td>
+            <td id="peso"></td>
+        </tr>
+        <tr>
+           <th colspan="2" style="text-align:right" id="usText">Enter Amount of US Dollars</th>
+            <td>
+               <input style="width:80px" name="usdollar" id="usdollar" value="" />
+            </td>
+        </tr>
+    </table>
+    
+</div>
+</div>
+</body>
+</html>
